@@ -1,44 +1,43 @@
 # Smart ATS: Resume Optimization Tool
 
-## Project Overview
+## 🚀 Project Overview
 
-The **Smart ATS: Resume Optimization Tool** is an interactive application designed to enhance resumes for Applicant Tracking Systems (ATS). This tool analyzes a resume against a job description (JD), providing insights into how well the resume matches the job requirements. The analysis is done using **Google's Gemini-Pro Generative AI** model to ensure precise and accurate results.
+The **Smart ATS: Resume Optimization Tool** is an interactive application designed to enhance resumes for Applicant Tracking Systems (ATS). This tool analyzes a resume against a job description (JD), providing insights into how well the resume matches the job requirements. The analysis is powered by **Cohere's language model** to ensure precise and actionable results.
 
-## Features
+## ✅ Features
 
-- **Percentage Match**: Calculates the percentage match between the uploaded resume and the job description.
-- **Missing Skills**: Identifies skills and keywords from the job description that are absent in the resume.
-- **Detailed Analysis**: Provides a comprehensive analysis, including a match percentage, missing keywords, and a profile summary based on the resume.
+- **🔍 Percentage Match**: Calculates how well the resume matches the job description.
+- **⚙️ Missing Skills**: Identifies key skills or keywords from the JD that are not present in the resume.
+- **📊 Detailed Analysis**: Offers a comprehensive analysis including percentage match, missing skills, and a brief profile summary.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Streamlit**: For creating the web interface.
-- **Google Generative AI (Gemini-Pro)**: For generating responses based on the provided resume and job description.
-- **PyPDF2**: For extracting text from uploaded PDF resumes.
-- **dotenv**: For securely managing API keys and environment variables.
+- **Streamlit** – For creating the user-friendly web interface.
+- **Cohere LLM** – For performing AI-based text evaluation.
+- **LangChain** – To integrate LLM calls.
+- **PyPDF2** – To extract text from uploaded PDF resumes.
+- **dotenv** – For securely loading API keys and environment variables.
 
-## How It Works
+## 🧠 How It Works
 
-1. **Upload a Resume**: Upload a PDF version of the resume.
-2. **Paste the Job Description**: Paste the job description into the provided text box.
-3. **Select an Analysis Option**:
-   - **Percentage Match**: Evaluates how closely the resume matches the job description.
-   - **Missing Skills**: Identifies key skills or qualifications missing in the resume.
-   - **Detailed Analysis**: Provides a full report including match percentage, missing skills, and a profile summary.
+1. **Upload Resume** – Upload your resume in PDF format.
+2. **Paste Job Description** – Copy and paste the JD into the input field.
+3. **Select Analysis Type**:
+   - **Percentage Match** – Get a match score between resume and JD.
+   - **Missing Skills** – See what essential skills are missing.
+   - **Detailed Analysis** – Get all of the above plus a profile summary.
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
-### Prerequisites
+### ✅ Prerequisites
 
-Make sure you have the following installed:
+Ensure the following are installed:
 
 - Python 3.9 or 3.10
-- Streamlit
-- Google Generative AI library
-- PyPDF2
-- dotenv
+- pip or conda
+- Cohere API key (get from https://cohere.com)
 
-### Installation
+### 📦 Installation
 
 1. **Clone the Repository**:
 
@@ -64,7 +63,7 @@ Make sure you have the following installed:
    - Create a `.env` file in the project directory.
    - Add your Google API Key to the `.env` file:
      ```
-     GOOGLE_API_KEY=your_google_api_key
+     COHERE_API_KEY=your_cohere_api_key
      ```
 
 ### Running the Application
