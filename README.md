@@ -1,20 +1,24 @@
 # Smart ATS: Resume Optimization Tool
 
 ## Project Overview
+
 The **Smart ATS: Resume Optimization Tool** is an interactive application designed to enhance resumes for Applicant Tracking Systems (ATS). This tool analyzes a resume against a job description (JD), providing insights into how well the resume matches the job requirements. The analysis is done using **Google's Gemini-Pro Generative AI** model to ensure precise and accurate results.
 
 ## Features
+
 - **Percentage Match**: Calculates the percentage match between the uploaded resume and the job description.
 - **Missing Skills**: Identifies skills and keywords from the job description that are absent in the resume.
 - **Detailed Analysis**: Provides a comprehensive analysis, including a match percentage, missing keywords, and a profile summary based on the resume.
 
 ## Tech Stack
+
 - **Streamlit**: For creating the web interface.
 - **Google Generative AI (Gemini-Pro)**: For generating responses based on the provided resume and job description.
 - **PyPDF2**: For extracting text from uploaded PDF resumes.
 - **dotenv**: For securely managing API keys and environment variables.
 
 ## How It Works
+
 1. **Upload a Resume**: Upload a PDF version of the resume.
 2. **Paste the Job Description**: Paste the job description into the provided text box.
 3. **Select an Analysis Option**:
@@ -25,7 +29,9 @@ The **Smart ATS: Resume Optimization Tool** is an interactive application design
 ## Setup Instructions
 
 ### Prerequisites
+
 Make sure you have the following installed:
+
 - Python 3.9 or 3.10
 - Streamlit
 - Google Generative AI library
@@ -35,18 +41,21 @@ Make sure you have the following installed:
 ### Installation
 
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/Nickxlx/Smart-ATS-Resume-Optimizer.git
    cd Smart-ATS-Resume-Optimizer
    ```
 
 2. **Create a Virtual Environment** (optional but recommended):
+
    ```bash
    conda create -name venv python==3.10 -y
-   conda activate venv  
+   conda activate venv
    ```
 
 3. **Install Dependencies**:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -61,6 +70,7 @@ Make sure you have the following installed:
 ### Running the Application
 
 1. Run the Streamlit app:
+
    ```bash
    streamlit run app.py
    ```
