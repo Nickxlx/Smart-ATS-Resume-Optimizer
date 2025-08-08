@@ -85,6 +85,9 @@ Ensure the following are installed:
    - **Missing Skills**: Find out which skills or keywords are missing in the resume.
    - **Detailed Analysis**: Get an in-depth analysis including match percentage, missing skills, and a profile summary.
 
+## Check out the live app
+[Live App: Resume Optimization Tool](https://huggingface.co/spaces/NikhilSinghxlx/Smart-ATS-Resume-Optimizer)
+
 ## Contact
 
 For questions or feedback regarding the project, you can reach out to the project owner at [nikhilsinghxlx@gmail.com](mailto:nikhilsinghxlx@gmail.com).
