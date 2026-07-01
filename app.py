@@ -2,25 +2,22 @@ import os
 from dotenv import load_dotenv
 import PyPDF2 as pdf
 import streamlit as st
-from langchain.llms import Cohere
+import google.generativeai as genai
 
 # Load environment variables
 load_dotenv()
-COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+api_key = os.getenv("GOOGLE_API_KEY")
 
-if not COHERE_API_KEY:
-    st.error("❌ COHERE API key not found. Please check your .env file.")
+if not api_key:
+    st.error("Google API Key not found!")
     st.stop()
 
-# Initialize Cohere model
-model = Cohere(
-    cohere_api_key=COHERE_API_KEY,
-    temperature=0,
-    max_tokens=1000,
-    model="command-r-plus"
-)
+genai.configure(api_key=api_key)
 
-# Upload PDF resume
+model = genai.GenerativeModel("gemini-2.5-flash")
+
+# Upload PDF resume and read PDF
+
 def uploaded_pdf_to_text(uploaded_file):
     try:
         if not uploaded_file.name.endswith('.pdf'):
@@ -29,11 +26,15 @@ def uploaded_pdf_to_text(uploaded_file):
         
         # Read the PDF file
         reader = pdf.PdfReader(uploaded_file)
+        
         text = ""
+        
         for page in reader.pages:
             page_text = page.extract_text()
+            
             if page_text:
                 text += page_text + "\n"
+                
         return text.strip()
     except Exception as e:
         st.error(f"❌ Error reading PDF: {e}")
@@ -43,8 +44,8 @@ def uploaded_pdf_to_text(uploaded_file):
 def get_ai_response(input_prompt, resume_txt, jd):
     try:
         prompt = f"{input_prompt}\n\nResume:\n{resume_txt}\n\nJob Description:\n{jd}"
-        response = model.invoke(prompt)
-        return response
+        response = model.generate_content(prompt)
+        return response.text
     except Exception as e:
         return str(e)
 
@@ -101,7 +102,7 @@ Compare the resume and job description in detail.
 Provide the following in your response:
 Job Description Match: "XX%" (percentage match based on skills, experience, and keywords)
 Missing Critical Keywords: (bullet list of the most important keywords or skills from the job description that are missing from the resume and could strongly affect selection chances)
-Profile Summary: (a concise, candidate-focused summary explaining how well the resume aligns with the job description, highlighting key gaps, and providing actionable suggestions for improving alignment and increasing the chances of being shortlisted)
+Profile Summary: (make it very concise, candidate-focused summary, highlighting key gaps, and providing actionable suggestions for improving alignment and increasing the chances of being shortlisted)
 Format your response exactly as shown above, with no extra commentary.
 """
 
@@ -119,16 +120,16 @@ if submit1:
     result = process_resume(input_prompt1)
     if result:
         st.subheader("📈 Percentage Match")
-        st.write(result, language="markdown")
+        st.write(result)
 
 elif submit2:
     result = process_resume(input_prompt2)
     if result:
         st.subheader("⚠️ Missing Skills")
-        st.write(result, language="markdown")
+        st.markdown(result)
 
 elif submit3:
     result = process_resume(input_prompt3)
     if result:
         st.subheader("📊 Detailed Resume Analysis")
-        st.write(result)
+        st.markdown(result)

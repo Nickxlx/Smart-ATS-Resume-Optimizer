@@ -1,5 +1,7 @@
 python-dotenv
 streamlit
 PyPDF2
-langchain 
-cohere
+# langchain 
+# langchain-community
+# cohere
+google-generativeai
