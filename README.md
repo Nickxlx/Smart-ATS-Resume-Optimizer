@@ -1,4 +1,5 @@
 # 🚀 Smart ATS: Resume Optimization Tool
+* Live app : https://huggingface.co/spaces/NikhilSinghxlx/Smart-ATS-Resume-Optimizer
 
 An AI-powered Resume Optimizer that analyzes your resume against a job description using Google's Gemini Large Language Model. The application provides an ATS compatibility score, identifies missing skills, and offers actionable suggestions to improve your chances of getting shortlisted.
 
