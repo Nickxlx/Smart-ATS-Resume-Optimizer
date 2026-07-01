@@ -74,19 +74,11 @@ cd Smart-ATS-Resume-Optimizer
 
 ### 2. Create a Virtual Environment
 
-macOS/Linux
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
 
 Windows
 
 ```bash
-python -m venv .venv
-
-.venv\Scripts\activate
+conda create -n venv python==3.10 
 ```
 
 ---
