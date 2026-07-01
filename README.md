@@ -1,93 +1,207 @@
-# Smart ATS: Resume Optimization Tool
+# 🚀 Smart ATS: Resume Optimization Tool
 
-## 🚀 Project Overview
+An AI-powered Resume Optimizer that analyzes your resume against a job description using Google's Gemini Large Language Model. The application provides an ATS compatibility score, identifies missing skills, and offers actionable suggestions to improve your chances of getting shortlisted.
 
-The **Smart ATS: Resume Optimization Tool** is an interactive application designed to enhance resumes for Applicant Tracking Systems (ATS). This tool analyzes a resume against a job description (JD), providing insights into how well the resume matches the job requirements. The analysis is powered by **Cohere's language model** to ensure precise and actionable results.
+---
 
-## ✅ Features
+## 📌 Features
 
-- **🔍 Percentage Match**: Calculates how well the resume matches the job description.
-- **⚙️ Missing Skills**: Identifies key skills or keywords from the JD that are not present in the resume.
-- **📊 Detailed Analysis**: Offers a comprehensive analysis including percentage match, missing skills, and a brief profile summary.
+* 📈 **ATS Match Score**
+
+  * Calculates how closely your resume matches the job description.
+
+* 🎯 **Missing Skills Detection**
+
+  * Identifies important technical skills, tools, and keywords missing from your resume.
+
+* 📊 **Detailed Resume Analysis**
+
+  * Generates a comprehensive report including:
+
+    * ATS Match Percentage
+    * Missing Skills
+    * Resume Strengths
+    * Areas for Improvement
+    * Professional Profile Summary
+
+* 📄 **PDF Resume Support**
+
+  * Upload resumes directly in PDF format.
+
+* ⚡ **Powered by Google Gemini**
+
+  * Uses Google's latest Gemini model for fast and accurate resume analysis.
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Streamlit** – For creating the user-friendly web interface.
-- **Cohere LLM** – For performing AI-based text evaluation.
-- **LangChain** – To integrate LLM calls.
-- **PyPDF2** – To extract text from uploaded PDF resumes.
-- **dotenv** – For securely loading API keys and environment variables.
+| Technology        | Purpose                         |
+| ----------------- | ------------------------------- |
+| Python            | Backend                         |
+| Streamlit         | Web Application                 |
+| Google Gemini API | AI Resume Analysis              |
+| PyPDF2            | PDF Text Extraction             |
+| python-dotenv     | Environment Variable Management |
 
-## 🧠 How It Works
+---
 
-1. **Upload Resume** – Upload your resume in PDF format.
-2. **Paste Job Description** – Copy and paste the JD into the input field.
-3. **Select Analysis Type**:
-   - **Percentage Match** – Get a match score between resume and JD.
-   - **Missing Skills** – See what essential skills are missing.
-   - **Detailed Analysis** – Get all of the above plus a profile summary.
+## 📂 Project Structure
 
-## ⚙️ Setup Instructions
+```text
+Smart-ATS-Resume-Optimizer/
+│
+├── app.py
+├── requirements.txt
+├── .env
+├── README.md
+└── assets/
+```
 
-### ✅ Prerequisites
+---
 
-Ensure the following are installed:
+## ⚙️ Installation
 
-- Python 3.9 or 3.10
-- pip or conda
-- Cohere API key (get from https://cohere.com)
+### 1. Clone the Repository
 
-### 📦 Installation
+```bash
+git clone https://github.com/Nickxlx/Smart-ATS-Resume-Optimizer.git
 
-1. **Clone the Repository**:
+cd Smart-ATS-Resume-Optimizer
+```
 
-   ```bash
-   git clone https://github.com/Nickxlx/Smart-ATS-Resume-Optimizer.git
-   cd Smart-ATS-Resume-Optimizer
-   ```
+---
 
-2. **Create a Virtual Environment** (optional but recommended):
+### 2. Create a Virtual Environment
 
-   ```bash
-   conda create -name venv python==3.10 -y
-   conda activate venv
-   ```
+macOS/Linux
 
-3. **Install Dependencies**:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Windows
 
-4. **Set up Environment Variables**:
-   - Create a `.env` file in the project directory.
-   - Add your Google API Key to the `.env` file:
-     ```
-     COHERE_API_KEY=your_cohere_api_key
-     ```
+```bash
+python -m venv .venv
 
-### Running the Application
+.venv\Scripts\activate
+```
 
-1. Run the Streamlit app:
+---
 
-   ```bash
-   streamlit run app.py
-   ```
+### 3. Install Dependencies
 
-2. Access the application at `http://localhost:8501` in your web browser.
+```bash
+pip install -r requirements.txt
+```
 
-## Usage
+---
 
-1. **Paste Job Description**: Copy and paste the job description in the provided text box.
-2. **Upload Resume**: Upload your resume in PDF format.
-3. **Choose Analysis Type**: Select one of the three options for ATS analysis.
-   - **Percentage Match**: Get a percentage indicating the resume's match with the job description.
-   - **Missing Skills**: Find out which skills or keywords are missing in the resume.
-   - **Detailed Analysis**: Get an in-depth analysis including match percentage, missing skills, and a profile summary.
+### 4. Create a `.env` File
 
-## Check out the live app
-[Live App: Resume Optimization Tool](https://huggingface.co/spaces/NikhilSinghxlx/Smart-ATS-Resume-Optimizer)
+Create a `.env` file in the project root.
 
-## Contact
+```env
+GOOGLE_API_KEY=your_google_api_key
+```
 
-For questions or feedback regarding the project, you can reach out to the project owner at [nikhilsinghxlx@gmail.com](mailto:nikhilsinghxlx@gmail.com).
+---
+
+### 5. Get a Google Gemini API Key
+
+1. Visit Google AI Studio.
+2. Sign in with your Google account.
+3. Generate an API key.
+4. Copy it into the `.env` file.
+
+---
+
+## ▶️ Run the Application
+
+```bash
+streamlit run app.py
+```
+
+Open your browser and visit
+
+```
+http://localhost:8501
+```
+
+---
+
+## 💡 How to Use
+
+### Step 1
+
+Paste the Job Description into the text area.
+
+### Step 2
+
+Upload your resume in PDF format.
+
+### Step 3
+
+Choose one of the available analyses:
+
+* 📈 Percentage Match
+* ⚠️ Missing Skills
+* 📊 Detailed Resume Analysis
+
+The AI will evaluate your resume and generate an ATS-friendly report.
+
+---
+
+## 📷 Demo
+
+Upload a resume, paste a job description, and instantly receive:
+
+* ATS Match Score
+* Missing Keywords
+* Resume Evaluation
+* Improvement Suggestions
+
+---
+
+## 🚀 Future Enhancements
+
+* Resume Improvement Suggestions
+* Download Analysis as PDF
+* Multiple Resume Comparison
+* Support for DOCX Files
+* Interactive ATS Dashboard
+* Multi-LLM Support (Gemini, OpenAI, Groq, Ollama)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Nikhil Singh**
+
+* GitHub: https://github.com/Nickxlx
+* LinkedIn: https://www.linkedin.com/in/nikhilsinghxlx/
+* Email: [nikhilsinghxlx@gmail.com](mailto:nikhilsinghxlx@gmail.com)
+
+---
+
+⭐ If you found this project useful, consider giving it a star on GitHub!
